@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto+Mono:wght@300&display=swap");
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Open Sans", sans-serif;
+}
+body {
+  font-family: "Roboto Mono", monospace;
+}
+
+#app {
+}
+
+h1 {
+  text-align: center;
+}
+
+.loginform {
+  position: absolute;
+  left: 50%;
+  width: 35%;
+  transform: translateX(-50%);
+}
