@@ -3,8 +3,7 @@
   "description": "Productivity app",
   "scripts": {
     "start": "node src/server",
-    "pestart": "run-p start:dev start:api",
-    "start:dev": "webpack-dev-server --config webpack.config.dev.js --port 3000",
+    "start:dev": "webpack-dev-server --config webpack.config.prod.js --port 3000",
     "start:api": "node src/server/index.js",
     "test": "jest --watch",
     "prebuild": "rimraf ./build && mkdir build",
@@ -25,6 +24,7 @@
     "axios": "0.19.2",
     "bootstrap": "4.3.1",
     "cors": "2.8.5",
+    "dotenv": "8.2.0",
     "express": "4.17.1",
     "file-loader": "6.0.0",
     "immer": "2.1.3",

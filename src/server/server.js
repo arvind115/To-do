@@ -12,13 +12,14 @@ const { addNewTask, updateTask } = require("./communicate-db");
 let port = process.env.PORT || 7777;
 let app = express();
 
+require("dotenv").config();
+
 app.use(cors(), bodyParser.urlencoded({ extended: true }), bodyParser.json());
-app.listen(port, console.info("Server running, listening on port ", port));
 
 authenticationRoute(app);
 
-if (process.env.NODE_ENV == `production`) {
-  app.use(express.static("build"));
+if (process.env.NODE_ENV === `production`) {
+  app.use(express.static(path.join(__dirname, "../../build")));
   app.get("/*", (req, res) => {
     res.sendFile(path.resolve("build/index.html"));
   });
@@ -42,3 +43,5 @@ app.post("/comment/new", async (req, res) => {
   await collection.insertOne(comment);
   res.status(200).send();
 });
+
+app.listen(port, console.info("Server running, listening on port ", port));
