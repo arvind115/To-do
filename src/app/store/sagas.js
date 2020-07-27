@@ -7,10 +7,9 @@ import { history } from "./history";
 import * as mutations from "./mutations";
 const url = process.env.NODE_ENV === "production" ? `` : ``;
 
-console.log("url", url);
-
 export function* taskCreationSaga() {
   while (true) {
+    console.log("url", url);
     const { groupID } = yield take(mutations.REQUEST_TASK_CREATION);
     const ownerID = yield select((state) => state.session.id);
     const taskID = uuid();
