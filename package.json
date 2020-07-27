@@ -2,14 +2,7 @@
   "name": "list-manager",
   "description": "Productivity app",
   "scripts": {
-    "start": "node src/server",
-    "start:dev": "webpack-dev-server --config webpack.config.prod.js --port 3000",
-    "start:api": "node src/server/index.js",
-    "test": "jest --watch",
-    "prebuild": "rimraf ./build && mkdir build",
-    "build": "webpack --config webpack.config.prod.js",
-    "postbuild": "run-p start:api serve:build",
-    "serve:build": "http-server ./build"
+    "start": "node src/server"
   },
   "jest": {
     "setupFiles": [
