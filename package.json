@@ -2,7 +2,8 @@
   "name": "list-manager",
   "description": "Productivity app",
   "scripts": {
-    "start": "run-p start:dev start:api",
+    "start":"node src/server",
+    "pestart": "run-p start:dev start:api",
     "start:dev": "webpack-dev-server --config webpack.config.dev.js --port 3000",
     "start:api": "node src/server/index.js",
     "test": "jest --watch",
