@@ -43,5 +43,5 @@ app.post("/comment/new", async (req, res) => {
 });
 
 const port = process.env.PORT || 7777;
-
+console.log("port = ", port);
 app.listen(port, console.info("Server running, listening on port ", port));
