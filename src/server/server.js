@@ -8,8 +8,6 @@ const { authenticationRoute } = require("./authenticate");
 
 const { connectDB } = require("./connect-db");
 const { addNewTask, updateTask } = require("./communicate-db");
-
-let port = process.env.PORT || 7777;
 let app = express();
 
 require("dotenv").config();
@@ -43,5 +41,7 @@ app.post("/comment/new", async (req, res) => {
   await collection.insertOne(comment);
   res.status(200).send();
 });
+
+const port = process.env.PORT || 7777;
 
 app.listen(port, console.info("Server running, listening on port ", port));
