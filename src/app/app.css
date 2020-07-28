@@ -19,9 +19,47 @@ h1 {
   text-align: center;
 }
 
-.loginform {
+.header a {
+  text-decoration: none;
+}
+
+.loginformdiv {
   position: absolute;
   left: 50%;
   width: 35%;
+  transform: translateX(-50%);
+}
+.loginformdiv h5 {
+  text-align: center;
+}
+.loginformdiv h6 {
+  text-align: center;
+  padding-top: 12px;
+}
+.loginformdiv h6 a {
+  text-decoration: none;
+}
+.loginform input {
+  border: none;
+  border-bottom: 1px solid grey;
+  border-radius: 0px;
+  outline: none;
+}
+.loginform input:focus,
+input:active {
+  box-shadow: none !important;
+}
+*:focus {
+  outline: none;
+  border: none;
+}
+.loginform {
+  justify-content: center;
+}
+.loginform button {
+  border-radius: 50px;
+  width: 50%;
+  left: 50%;
+  position: relative;
   transform: translateX(-50%);
 }

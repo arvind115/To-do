@@ -7,14 +7,12 @@ import React from "react";
 import * as mutations from "../store/mutations";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import Spinner from "./Spinner";
 
 const LoginComponent = ({ authenticateUser, authenticated }) => (
-  <div className="card p-3 col-6 loginform">
-    <h2>Please login</h2>
-    <h3>
-      <Link to="signup">Do not have an account? Sign up.</Link>
-    </h3>
-    <form onSubmit={authenticateUser}>
+  <div className="card p-3 col-3 loginformdiv">
+    <h5>User login</h5>
+    <form onSubmit={authenticateUser} className="loginform">
       <input
         type="text"
         placeholder="username"
@@ -34,19 +32,16 @@ const LoginComponent = ({ authenticateUser, authenticated }) => (
       ) : null}
       <button
         type="submit"
-        disabled={authenticated === `PROCESSING`}
-        className="form-control mt-2 btn btn-primary"
+        disabled={authenticated === `AUTHENTICATING`}
+        className="mt-2 btn btn-primary"
       >
-        {authenticated === `PROCESSING` ? (
-          <span
-            className="spinner-border spinner-border-sm"
-            role="status"
-            aria-hidden="true"
-          ></span>
-        ) : null}
+        {authenticated === `AUTHENTICATING` ? <Spinner /> : null}
         Login
       </button>
     </form>
+    <h6>
+      <Link to="signup">Do not have an account? Sign up.</Link>
+    </h6>
   </div>
 );
 

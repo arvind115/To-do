@@ -3,6 +3,9 @@
   "description": "Productivity app",
   "scripts": {
     "start": "node src/server",
+    "start:dev": "run-p start:server start:client",
+    "start:server": "node src/server",
+    "start:client": "webpack-dev-server --config webpack.config.dev.js --open",
     "build": "webpack -p --config webpack.config.prod.js"
   },
   "jest": {
