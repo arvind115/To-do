@@ -23,29 +23,30 @@ h1 {
   text-decoration: none;
 }
 
-.loginformdiv {
+.formDiv {
+  width: 280px;
   position: absolute;
   left: 50%;
-  width: 35%;
   transform: translateX(-50%);
+  border: 1px solid grey;
+  border-radius: 12px;
+  padding: 20px;
 }
-.loginformdiv h5 {
+.formDiv h5 {
   text-align: center;
 }
-.loginformdiv h6 {
-  text-align: center;
-  padding-top: 12px;
-}
-.loginformdiv h6 a {
+.formDiv a {
   text-decoration: none;
+  font-size: 12px;
 }
-.loginform input {
+.formDiv input {
   border: none;
   border-bottom: 1px solid grey;
   border-radius: 0px;
   outline: none;
+  margin-top: 5px;
 }
-.loginform input:focus,
+input:focus,
 input:active {
   box-shadow: none !important;
 }
@@ -53,11 +54,11 @@ input:active {
   outline: none;
   border: none;
 }
-.loginform {
-  justify-content: center;
-}
-.loginform button {
+
+.formDiv button,
+.round {
   border-radius: 50px;
+  margin-top: 20px;
   width: 50%;
   left: 50%;
   position: relative;

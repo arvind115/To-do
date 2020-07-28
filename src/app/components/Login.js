@@ -10,9 +10,9 @@ import { Link } from "react-router-dom";
 import Spinner from "./Spinner";
 
 const LoginComponent = ({ authenticateUser, authenticated }) => (
-  <div className="card p-3 col-md-3 col-sm-12 loginformdiv">
+  <div className=" formDiv">
     <h5>User login</h5>
-    <form onSubmit={authenticateUser} className="loginform">
+    <form onSubmit={authenticateUser}>
       <input
         type="text"
         placeholder="username"
@@ -33,15 +33,13 @@ const LoginComponent = ({ authenticateUser, authenticated }) => (
       <button
         type="submit"
         disabled={authenticated === `AUTHENTICATING`}
-        className="mt-2 btn btn-primary"
+        className="btn btn-primary"
       >
         {authenticated === `AUTHENTICATING` ? <Spinner /> : null}
         Login
       </button>
     </form>
-    <h6>
-      <Link to="signup">Do not have an account? Sign up.</Link>
-    </h6>
+    <Link to="signup">Do not have an account? Sign up.</Link>
   </div>
 );
 
