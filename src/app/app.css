@@ -64,6 +64,9 @@ input:active {
   position: relative;
   transform: translateX(-50%);
 }
+.card {
+  margin-bottom: 20px;
+}
 .cardf {
   margin: 4x;
   width: 300px;
