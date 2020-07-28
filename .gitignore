@@ -31,3 +31,5 @@ node_modules
 
 # json-server db
 db.json
+
+.env
