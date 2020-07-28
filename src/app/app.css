@@ -64,3 +64,20 @@ input:active {
   position: relative;
   transform: translateX(-50%);
 }
+.cardf {
+  margin: 4x;
+  width: 300px;
+  margin-bottom: 20px;
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 1px solid lightslategrey;
+  border-radius: 12px;
+}
+
+@media only screen and (max-width: 600px) {
+  .cardf {
+    width: 96%;
+  }
+}

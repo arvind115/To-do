@@ -32,14 +32,14 @@ const TaskDetail = ({
   setTaskName,
 }) => {
   return (
-    <div className="card p-3 col-6">
+    <div className="cardf p-3">
       {isOwner ? (
         <div>
           <input
             type="text"
             value={task.name}
             onChange={setTaskName}
-            className="form-control form-control-lg"
+            className="form-control"
           />
         </div>
       ) : (
@@ -47,14 +47,14 @@ const TaskDetail = ({
           {task.name} {isComplete ? `✓` : null}
         </h3>
       )}
-
+      <hr />
       <div className="mt-3">
         {isOwner ? (
           <div>
             <div>
               You own this task.
               <button
-                className="btn btn-primary ml-2"
+                className="btn btn-primary ml-2 btn-sm"
                 onClick={() => setTaskCompletion(id, !isComplete)}
               >
                 {isComplete ? `Reopen` : `Complete`} this Task
@@ -75,7 +75,7 @@ const TaskDetail = ({
           </div>
         ))}
       </div>
-
+      <hr />
       <form className="form-inline">
         <span className="mr-4">Change Group</span>
         <select
@@ -90,7 +90,7 @@ const TaskDetail = ({
           ))}
         </select>
       </form>
-
+      <hr />
       <div className="mt-2">
         <form
           className="form-inline"
@@ -103,14 +103,15 @@ const TaskDetail = ({
             placeholder="Add a comment"
             className="form-control"
           />
-          <button type="submit" className="btn btn-primary">
+          <button type="submit" className="btn btn-primary btn-sm mt-2">
             Submit
           </button>
         </form>
       </div>
       <div>
+        <hr />
         <Link to="/dashboard">
-          <button className="btn btn-info mt-2">Done</button>
+          <button className="btn btn-info btn-sm mt-2 round">Done</button>
         </Link>
       </div>
     </div>

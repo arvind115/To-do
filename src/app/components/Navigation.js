@@ -5,6 +5,7 @@
  */
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+// import { Redirect } from "react-router";
 import React from "react";
 
 import { ConnectedUsernameDisplay } from "./UsernameDisplay";

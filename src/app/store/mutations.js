@@ -10,67 +10,75 @@ export const AUTHENTICATING = `AUTHENTICATING`;
 export const AUTHENTICATED = `AUTHENTICATED`;
 export const NOT_AUTHENTICATED = `NOT_AUTHENTICATED`;
 export const SET_STATE = `SET_STATE`;
+export const RESET_STATE = `RESET_STATE`;
 export const USERNAME_RESERVED = `USERNAME_RESERVED`;
 export const REQUEST_USER_ACCOUNT_CREATION = `REQUEST_USER_ACCOUNT_CREATION`;
 
-export const setTaskCompletion = (id, isComplete = true)=>({
-    type:SET_TASK_COMPLETE,
-    taskID:id,
-    isComplete
+export const setTaskCompletion = (id, isComplete = true) => ({
+  type: SET_TASK_COMPLETE,
+  taskID: id,
+  isComplete,
 });
 
-export const addTaskComment = (commentID, taskID, ownerID, content)=>({
-    type:ADD_TASK_COMMENT,
-    id:commentID,
-    task: taskID,
-    owner: ownerID,
-    content
+export const addTaskComment = (commentID, taskID, ownerID, content) => ({
+  type: ADD_TASK_COMMENT,
+  id: commentID,
+  task: taskID,
+  owner: ownerID,
+  content,
 });
 
-export const requestTaskCreation = (groupID)=>({
-    type:REQUEST_TASK_CREATION,
-    groupID
+export const requestTaskCreation = (groupID) => ({
+  type: REQUEST_TASK_CREATION,
+  groupID,
 });
 
-export const createTask = (taskID, groupID, ownerID)=>({
-    type:CREATE_TASK,
-    taskID,
-    groupID,
-    ownerID
+export const createTask = (taskID, groupID, ownerID) => ({
+  type: CREATE_TASK,
+  taskID,
+  groupID,
+  ownerID,
 });
 
-export const setTaskGroup = (taskID, groupID)=>({
-    type:SET_TASK_GROUP,
-    taskID,
-    groupID
+export const setTaskGroup = (taskID, groupID) => ({
+  type: SET_TASK_GROUP,
+  taskID,
+  groupID,
 });
 
-export const setTaskName = (taskID, name)=>({
-    type:SET_TASK_NAME,
-    taskID,
-    name
+export const setTaskName = (taskID, name) => ({
+  type: SET_TASK_NAME,
+  taskID,
+  name,
 });
 
-export const requestAuthenticateUser = (username, password)=>({
-    type:REQUEST_AUTHENTICATE_USER,
-    username,
-    password
+export const requestAuthenticateUser = (username, password) => ({
+  type: REQUEST_AUTHENTICATE_USER,
+  username,
+  password,
 });
 
-export const processAuthenticateUser = (status = AUTHENTICATING, session = null)=>({
-    type: PROCESSING_AUTHENTICATE_USER,
-    session,
-    authenticated: status
+export const processAuthenticateUser = (
+  status = AUTHENTICATING,
+  session = null
+) => ({
+  type: PROCESSING_AUTHENTICATE_USER,
+  session,
+  authenticated: status,
 });
 
-export const setState = (state = {})=>({
-    type:SET_STATE,
-    state
+export const setState = (state = {}) => ({
+  type: SET_STATE,
+  state,
 });
 
+export const resetState = (state = {}) => ({
+  type: RESET_STATE,
+  state,
+});
 
-export const requestCreateUserAccount = (username,password)=>({
-    type:REQUEST_USER_ACCOUNT_CREATION,
-    username,
-    password
+export const requestCreateUserAccount = (username, password) => ({
+  type: REQUEST_USER_ACCOUNT_CREATION,
+  username,
+  password,
 });
