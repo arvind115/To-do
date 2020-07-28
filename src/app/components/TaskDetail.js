@@ -4,7 +4,7 @@
  * The component automatically calls the REST API [via a mutation] to update the server on every change.
  */
 import React from "react";
-import uuid from "uuid";
+const { v4: uuidv4 } = require("uuid");
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 
@@ -153,7 +153,7 @@ function mapDispatchToProps(dispatch, ownProps) {
     },
     addTaskComment(taskID, ownerID, e) {
       let input = e.target[`commentContents`];
-      let commentID = uuid();
+      let commentID = uuidv4();
       let content = input.value;
       e.preventDefault();
       if (content !== ``) {

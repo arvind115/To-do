@@ -1,18 +1,18 @@
 /* eslint-disable no-unused-vars */
 import { take, put, select } from "redux-saga/effects";
-import uuid from "uuid";
+const { v4: uuidv4 } = require("uuid");
 import axios from "axios";
 
 import { history } from "./history";
 import * as mutations from "./mutations";
-const url = process.env.NODE_ENV === "production" ? `` : ``;
+const url =
+  process.env.NODE_ENV === "production" ? `` : `http://localhost:7777`;
 
 export function* taskCreationSaga() {
   while (true) {
-    console.log("url", url);
     const { groupID } = yield take(mutations.REQUEST_TASK_CREATION);
     const ownerID = yield select((state) => state.session.id);
-    const taskID = uuid();
+    const taskID = uuidv4();
     let mutation = mutations.createTask(taskID, groupID, ownerID);
     const { res } = yield axios.post(url + `/task/new`, {
       task: {
@@ -53,6 +53,7 @@ export function* taskModificationSaga() {
 }
 
 export function* userAuthenticationSaga() {
+  console.log("url", url);
   while (true) {
     const { username, password } = yield take(
       mutations.REQUEST_AUTHENTICATE_USER
@@ -65,7 +66,7 @@ export function* userAuthenticationSaga() {
       yield put(mutations.setState(data.state));
       yield put(
         mutations.processAuthenticateUser(mutations.AUTHENTICATED, {
-          id: "U1", // todo... get ID from response
+          id: data.userID, // todo... get ID from response
           token: data.token,
         })
       );
