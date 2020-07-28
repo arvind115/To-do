@@ -22,7 +22,7 @@ const RouteGuard = (Component) => ({ match }) =>
 export const Main = () => (
   <Router history={history}>
     <Provider store={store}>
-      <div className="container mt-3">
+      <div className="container-fluid">
         <ConnectedNavigation />
         <Route exact path="/" component={ConnectedLogin} />
         <Route exact path="/signup" component={ConnectedSignup} />

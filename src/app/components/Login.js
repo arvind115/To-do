@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 import Spinner from "./Spinner";
 
 const LoginComponent = ({ authenticateUser, authenticated }) => (
-  <div className="card p-3 col-3 loginformdiv">
+  <div className="card p-3 col-md-3 col-sm-12 loginformdiv">
     <h5>User login</h5>
     <form onSubmit={authenticateUser} className="loginform">
       <input
